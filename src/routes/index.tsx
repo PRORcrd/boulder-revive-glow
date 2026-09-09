@@ -25,9 +25,9 @@ export const Route = createFileRoute("/")({
 
 const liveVacatures = [
   { title: "Projectleider Bouwkunde", meta: "Regio Amersfoort · Engineering", tag: "Tijdelijk", green: true },
-  { title: "Senior Business Controller", meta: "Amersfoort · Finance", tag: "Vast", green: false },
-  { title: "Werkvoorbereider Installatietechniek", meta: "Regio Utrecht · Engineering", tag: "Detachering", green: true },
-  { title: "Financial Controller", meta: "Amersfoort · Finance", tag: "Vast", green: false },
+  { title: "Senior Business Controller bij EDSN", meta: "Amersfoort · Finance", tag: "Vast", green: false },
+  { title: "Projectleider Werktuigbouwkunde", meta: "Rotterdam · Engineering", tag: "Tijdelijk", green: true },
+  { title: "Teamleider Finance", meta: "Zwolle · Finance", tag: "Vast", green: false },
 ];
 
 const vacatureCards = [
@@ -37,23 +37,26 @@ const vacatureCards = [
     date: "09-09",
     title: "Projectleider Bouwkunde",
     place: "Regio Amersfoort",
-    facts: ["Fulltime", "32–40 uur", "Engineering"],
+    desc: "Jij stuurt het projectteam aan en bewaakt budgetten om bouwkundige betonstations van A tot Z op tijd op te leveren.",
+    facts: ["Fulltime", "32–40 uur", "Salaris tot € 6.000"],
   },
   {
     tag: "Vast",
     green: false,
     date: "04-09",
     title: "Senior Business Controller",
-    place: "Amersfoort",
-    facts: ["Fulltime", "40 uur", "Finance"],
+    place: "EDSN · Amersfoort",
+    desc: "Ben jij de stevige business partner die energie krijgt van scherpe analyses en strategische impact?",
+    facts: ["Fulltime", "Finance", "Business partnering"],
   },
   {
-    tag: "Detachering",
+    tag: "Tijdelijk",
     green: true,
-    date: "28-08",
+    date: "02-09",
     title: "Werkvoorbereider Installatietechniek",
-    place: "Regio Utrecht",
-    facts: ["Fulltime", "36–40 uur", "Engineering"],
+    place: "Regio Amsterdam",
+    desc: "Jij bent de organisatorische motor achter de meest strak gestroomlijnde en duurzame installatieprojecten.",
+    facts: ["Fulltime", "32–40 uur", "Engineering"],
   },
 ];
 
