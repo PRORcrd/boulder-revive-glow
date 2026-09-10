@@ -1,5 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import kantoor from "@/assets/kantoor.jpg";
+import logoAsset from "@/assets/logo-boulder.svg.asset.json";
+import teamAsset from "@/assets/boulder-team.jpg.asset.json";
+import engineeringAsset from "@/assets/boulder-engineering.jpg.asset.json";
+import financeAsset from "@/assets/boulder-finance.jpg.asset.json";
+
+const logo = logoAsset.url;
+const teamPhoto = teamAsset.url;
+const engineeringPhoto = engineeringAsset.url;
+const financePhoto = financeAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -78,8 +86,28 @@ const redenen = [
   },
   {
     n: "04",
-    title: "Leaseauto en events",
-    text: "Een leaseauto die je privé mag gebruiken, en kennis delen tijdens Boulder Events.",
+    title: "Jonge, ondernemende club",
+    text: "Werken bij een jonge, mensgerichte en ondernemende club met korte lijnen.",
+  },
+  {
+    n: "05",
+    title: "Goede voorwaarden",
+    text: "Mooie secundaire arbeidsvoorwaarden, waaronder een goed pensioenplan.",
+  },
+  {
+    n: "06",
+    title: "Leaseauto",
+    text: "Een leaseauto die je ook privé mag gebruiken.",
+  },
+  {
+    n: "07",
+    title: "Kennis delen",
+    text: "Actief kennis delen en opdoen, online en tijdens Boulder Events.",
+  },
+  {
+    n: "08",
+    title: "Sterk regionaal netwerk",
+    text: "Een sterk netwerk met vacatures in Amersfoort en regio Utrecht.",
   },
 ];
 
@@ -88,20 +116,17 @@ function Index() {
     <div className="min-h-screen bg-surface font-body text-navy antialiased selection:bg-boulder/30">
       <header className="sticky top-0 z-20 border-b border-navy/10 bg-surface/95 backdrop-blur-sm">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-          <div className="flex items-center gap-2.5">
-            <div className="grid h-8 w-8 place-items-center rounded-full bg-boulder">
-              <span className="font-display text-sm text-navy">B</span>
-            </div>
-            <span className="font-display text-lg tracking-tight">Boulder</span>
-          </div>
+          <a href="https://boulder.nl/" aria-label="Boulder homepage">
+            <img src={logo} alt="Boulder Detachering" className="h-9 w-auto" />
+          </a>
           <nav className="hidden items-center gap-8 text-sm font-medium text-navy/70 md:flex">
-            <a className="hover:text-navy" href="#vacatures">Vacatures</a>
-            <a className="hover:text-navy" href="#specialismen">Engineering</a>
-            <a className="hover:text-navy" href="#specialismen">Finance</a>
-            <a className="hover:text-navy" href="#over">Over ons</a>
+            <a className="hover:text-navy" href="https://boulder.nl/vacatures/">Vacatures</a>
+            <a className="hover:text-navy" href="https://boulder.nl/branche/engineering/">Engineering</a>
+            <a className="hover:text-navy" href="https://boulder.nl/branche/finance/">Finance</a>
+            <a className="hover:text-navy" href="https://boulder.nl/over-boulder/">Over ons</a>
           </nav>
           <a
-            href="tel:+31623879347"
+            href="https://boulder.nl/contact/"
             className="rounded-full bg-boulder px-5 py-2.5 text-sm font-semibold text-navy transition hover:bg-boulder/90"
           >
             Contact
@@ -118,11 +143,9 @@ function Index() {
             <h1 className="mb-6 font-display text-5xl leading-[0.95] tracking-tight">
               No-nonsense
               <br />
-              detachering in
+              Detacheringsbureau
               <br />
-              Finance &amp;
-              <br />
-              <span className="text-boulder">Techniek.</span>
+              <span className="text-boulder">Finance &amp; Techniek.</span>
             </h1>
             <p className="mb-8 max-w-sm text-lg leading-relaxed text-navy/70">
               Boulder bemiddelt technici en financials in Amersfoort, regio Utrecht en de Randstad.
@@ -130,13 +153,13 @@ function Index() {
             </p>
             <div className="flex flex-wrap gap-3">
               <a
-                href="#vacatures"
+                href="https://boulder.nl/vacatures/"
                 className="rounded-full bg-navy px-6 py-3.5 font-semibold text-surface transition hover:bg-navy2"
               >
                 Bekijk vacatures
               </a>
               <a
-                href="#waarom"
+                href="https://boulder.nl/werken-bij-boulder/"
                 className="rounded-full border border-navy/20 px-6 py-3.5 font-semibold transition hover:border-navy/40"
               >
                 Werken bij Boulder
@@ -186,13 +209,20 @@ function Index() {
                 ))}
               </ul>
               <a
-                href="#vacatures"
+                href="https://boulder.nl/vacatures/"
                 className="block bg-surface px-5 py-4 text-center text-sm font-semibold text-boulder transition hover:bg-boulder/10"
               >
                 Bekijk alle vacatures →
               </a>
             </div>
           </div>
+          <img
+            src={teamPhoto}
+            alt="Het team van Boulder Detachering"
+            width={2000}
+            height={1059}
+            className="mt-12 aspect-[2/1] w-full rounded-2xl object-cover object-center"
+          />
         </div>
       </section>
 
@@ -203,7 +233,9 @@ function Index() {
             <span className="hidden text-sm font-medium text-surface/40 sm:block">Engineering &amp; Finance</span>
           </div>
           <div className="grid gap-5 md:grid-cols-2">
-            <div className="rounded-2xl border border-surface/10 bg-navy2 p-8 transition hover:border-boulder/60">
+            <div className="overflow-hidden rounded-2xl border border-surface/10 bg-navy2 transition hover:border-boulder/60">
+              <img src={engineeringPhoto} alt="Boulder-professional in de techniek" width={2000} height={1334} loading="lazy" className="aspect-[16/7] w-full object-cover" />
+              <div className="p-8">
               <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-widest text-boulder">
                 Engineering
               </span>
@@ -217,11 +249,14 @@ function Index() {
                 <span className="rounded-full bg-surface/10 px-3 py-1.5 text-xs">Elektrotechniek</span>
                 <span className="rounded-full bg-surface/10 px-3 py-1.5 text-xs">Bouwkunde</span>
               </div>
-              <a href="#vacatures" className="text-sm font-semibold text-boulder">
+               <a href="https://boulder.nl/branche/engineering/" className="text-sm font-semibold text-boulder">
                 Ontdek Engineering →
               </a>
+              </div>
             </div>
-            <div className="rounded-2xl border border-surface/10 bg-navy2 p-8 transition hover:border-boulder/60">
+            <div className="overflow-hidden rounded-2xl border border-surface/10 bg-navy2 transition hover:border-boulder/60">
+              <img src={financePhoto} alt="Financeprofessionals in overleg" width={2000} height={1334} loading="lazy" className="aspect-[16/7] w-full object-cover" />
+              <div className="p-8">
               <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-widest text-boulder">
                 Finance
               </span>
@@ -235,9 +270,10 @@ function Index() {
                 <span className="rounded-full bg-surface/10 px-3 py-1.5 text-xs">Accountancy</span>
                 <span className="rounded-full bg-surface/10 px-3 py-1.5 text-xs">Interim finance</span>
               </div>
-              <a href="#vacatures" className="text-sm font-semibold text-boulder">
+               <a href="https://boulder.nl/branche/finance/" className="text-sm font-semibold text-boulder">
                 Ontdek Finance →
               </a>
+              </div>
             </div>
           </div>
         </div>
@@ -246,7 +282,7 @@ function Index() {
       <section id="vacatures" className="mx-auto max-w-6xl px-6 py-16">
         <div className="mb-8 flex items-end justify-between">
           <h2 className="font-display text-3xl tracking-tight">Vacatures</h2>
-          <a href="#vacatures" className="text-sm font-semibold text-boulder">
+          <a href="https://boulder.nl/vacatures/" className="text-sm font-semibold text-boulder">
             Alles bekijken →
           </a>
         </div>
@@ -268,6 +304,7 @@ function Index() {
               </div>
               <h3 className="mb-1 text-lg font-semibold">{v.title}</h3>
               <p className="mb-5 text-sm text-navy/55">{v.place}</p>
+              <p className="mb-5 text-sm leading-relaxed text-navy/70">{v.desc}</p>
               <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-navy/60">
                 {v.facts.map((f, i) => (
                   <span key={f} className="flex gap-4">
@@ -317,28 +354,28 @@ function Index() {
           <figure className="rounded-2xl border border-navy/10 bg-white p-6">
             <div className="mb-3 text-sm text-boulder">★★★★★</div>
             <blockquote className="mb-4 leading-relaxed text-navy/80">
-              „Korte lijnen en heldere afspraken. Binnen twee weken zat ik op een opdracht die echt past."
+              “Wat echt heel fijn is aan Boulder is dat er met je mee gedacht wordt. Als je contactpersoon zelf niet de expertise heeft die nodig is, wordt er snel en goed meegedacht. Er wordt goed doorgevraagd en de tijd genomen om tot de kern te komen waar de behoefte van de opdrachtgever echt ligt. En dan nog als kers op de taart persoonlijke interesse! Kortom, echt een goede partij om mee samen te werken.”
             </blockquote>
             <figcaption className="text-sm font-semibold">
-              Marjolijn <span className="font-normal text-navy/45">· Finance</span>
+              Marjolijn Blom <span className="font-normal text-navy/45">· 29/01/2024</span>
             </figcaption>
           </figure>
           <figure className="rounded-2xl border border-navy/10 bg-white p-6">
             <div className="mb-3 text-sm text-boulder">★★★★★</div>
             <blockquote className="mb-4 leading-relaxed text-navy/80">
-              „Ze snappen de techniek. Geen standaardpraatje, maar een gesprek over het werk zelf."
+              “Ik heb de afgelopen tijd een aantal opdrachten gedaan via Boulder Detachering en ben erg te spreken over de samenwerking. Onderling prettig en duidelijk contact en ze hebben een goed oog voor het vinden van een match!”
             </blockquote>
             <figcaption className="text-sm font-semibold">
-              Thijs <span className="font-normal text-navy/45">· Installatietechniek</span>
+              Robin de Pender <span className="font-normal text-navy/45">· 10/01/2024</span>
             </figcaption>
           </figure>
           <figure className="rounded-2xl border border-navy/10 bg-white p-6">
             <div className="mb-3 text-sm text-boulder">★★★★★</div>
             <blockquote className="mb-4 leading-relaxed text-navy/80">
-              „Goede voorwaarden en een vast aanspreekpunt dat je echt kent."
+              “Fijn bedrijf om mee samen te werken. Werk is op maat en past bij de kennis en kunde van ons bedrijf. Communicatie en afstemming altijd belangrijk voor een langdurige samenwerking.”
             </blockquote>
             <figcaption className="text-sm font-semibold">
-              Sanne <span className="font-normal text-navy/45">· Business Controller</span>
+              Alen Halilovic <span className="font-normal text-navy/45">· 10/12/2023</span>
             </figcaption>
           </figure>
         </div>
@@ -359,18 +396,18 @@ function Index() {
                 Utrecht en de Randstad. We adviseren en bemiddelen technici en financials, en bouwen aan een
                 sterk netwerk waarin kennis actief wordt gedeeld.
               </p>
-              <a href="#" className="mt-2 inline-block font-semibold text-boulder">
+              <a href="https://boulder.nl/over-boulder/" className="mt-2 inline-block font-semibold text-boulder">
                 Lees ons verhaal →
               </a>
             </div>
             <div className="lg:col-span-5">
               <img
-                src={kantoor}
+                src={engineeringPhoto}
                 alt="Boulder-collega's in overleg op het kantoor in Amersfoort"
-                width={1024}
-                height={1024}
+                width={2000}
+                height={1334}
                 loading="lazy"
-                className="aspect-square w-full rounded-2xl object-cover outline-1 -outline-offset-1 outline-surface/10"
+                className="aspect-[3/2] w-full rounded-2xl object-cover outline-1 -outline-offset-1 outline-surface/10"
               />
             </div>
           </div>
@@ -381,12 +418,9 @@ function Index() {
         <div className="mx-auto max-w-6xl px-6 py-14">
           <div className="grid gap-10 md:grid-cols-4">
             <div className="md:col-span-2">
-              <div className="mb-4 flex items-center gap-2.5">
-                <div className="grid h-8 w-8 place-items-center rounded-full bg-boulder">
-                  <span className="font-display text-sm text-navy">B</span>
-                </div>
-                <span className="font-display text-lg">Boulder</span>
-              </div>
+              <a href="https://boulder.nl/" aria-label="Boulder homepage" className="mb-4 inline-block rounded bg-surface p-2">
+                <img src={logo} alt="Boulder Detachering" className="h-10 w-auto" />
+              </a>
               <p className="max-w-xs text-sm leading-relaxed text-surface/60">
                 Detachering voor finance- en techniekprofessionals. Amersfoort, regio Utrecht en de Randstad.
               </p>
@@ -394,25 +428,27 @@ function Index() {
             <div>
               <h4 className="mb-4 text-sm font-semibold">Bureau</h4>
               <ul className="space-y-2.5 text-sm text-surface/60">
-                <li><a href="#vacatures" className="hover:text-boulder">Vacatures</a></li>
-                <li><a href="#specialismen" className="hover:text-boulder">Engineering</a></li>
-                <li><a href="#specialismen" className="hover:text-boulder">Finance</a></li>
-                <li><a href="#over" className="hover:text-boulder">Over ons</a></li>
+                <li><a href="https://boulder.nl/vacatures/" className="hover:text-boulder">Vacatures</a></li>
+                <li><a href="https://boulder.nl/branche/engineering/" className="hover:text-boulder">Engineering</a></li>
+                <li><a href="https://boulder.nl/branche/finance/" className="hover:text-boulder">Finance</a></li>
+                <li><a href="https://boulder.nl/over-boulder/" className="hover:text-boulder">Over ons</a></li>
               </ul>
             </div>
             <div>
               <h4 className="mb-4 text-sm font-semibold">Contact</h4>
               <ul className="space-y-2.5 text-sm text-surface/60">
                 <li><a href="tel:+31623879347" className="hover:text-boulder">06 23 87 93 47</a></li>
-                <li>Amersfoort</li>
+                <li><a href="mailto:d.van.beek@boulder.nl" className="hover:text-boulder">d.van.beek@boulder.nl</a></li>
+                <li>Wiekenweg 34H<br />3815 KL Amersfoort</li>
               </ul>
             </div>
           </div>
           <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-surface/10 pt-6 text-xs text-surface/40 sm:flex-row">
             <span>© 2026 Boulder Detachering</span>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-surface/70">Privacy</a>
-              <a href="#" className="hover:text-surface/70">Algemene voorwaarden</a>
+              <a href="https://boulder.nl/privacyverklaring/" className="hover:text-surface/70">Privacy</a>
+              <a href="https://www.linkedin.com/company/boulderdetacheringb.v./" className="hover:text-surface/70">LinkedIn</a>
+              <a href="https://www.instagram.com/boulderdetachering/" className="hover:text-surface/70">Instagram</a>
             </div>
           </div>
         </div>
