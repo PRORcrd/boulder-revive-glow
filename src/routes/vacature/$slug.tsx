@@ -161,6 +161,99 @@ const vacatures: Record<string, Vacature> = {
       },
     ],
   },
+  "projectleider-werktuigbouwkunde": {
+    title: "Projectleider Werktuigbouwkunde",
+    place: "Rotterdam",
+    tag: "Tijdelijk",
+    green: true,
+    date: "02-09-2026",
+    intro:
+      "Voor een technische opdrachtgever in Rotterdam zoeken wij een Projectleider Werktuigbouwkunde. Jij leidt werktuigbouwkundige projecten van ontwerp tot oplevering en houdt overzicht over planning, budget en kwaliteit.",
+    facts: [
+      { icon: "place", label: "Rotterdam" },
+      { icon: "hours", label: "Fulltime" },
+      { icon: "salary", label: "Engineering · Projectleiding" },
+    ],
+    sections: [
+      {
+        heading: "Wat ga je doen?",
+        body: [
+          "Als Projectleider Werktuigbouwkunde stuur je projecten aan in de werktuigbouwkundige installatietechniek, van eerste opzet tot oplevering.",
+          "Je bewaakt planning, budget en kwaliteit, stuurt engineers en werkvoorbereiders aan en bent het aanspreekpunt voor de opdrachtgever.",
+          "Je signaleert risico's en afwijkingen vroegtijdig en stuurt bij waar nodig.",
+        ],
+      },
+      {
+        heading: "Wat breng je mee?",
+        body: [
+          "Een afgeronde HBO-opleiding Werktuigbouwkunde of een vergelijkbare technische richting.",
+          "Aantoonbare ervaring met het leiden van technische projecten, bij voorkeur in de installatietechniek of industrie.",
+          "Een ondernemende houding, sterke communicatie en natuurlijk leiderschap.",
+        ],
+      },
+      {
+        heading: "Wat bieden wij?",
+        body: [
+          "Een uitstekend salaris met mooie secundaire voorwaarden en een goed pensioenplan.",
+          "Een leaseauto die je ook privé mag gebruiken.",
+          "Coaching, training en opleidingen die je zelf kiest, plus actief kennis delen tijdens Boulder Events.",
+        ],
+      },
+      {
+        heading: "Over de opdrachtgever",
+        body: [
+          "Een gerenommeerde technische dienstverlener in de regio Rotterdam met projecten in de industrie en utiliteit.",
+          "Via Boulder werk je vanuit een sterk netwerk met korte lijnen en persoonlijke begeleiding.",
+        ],
+      },
+    ],
+  },
+  "teamleider-finance": {
+    title: "Teamleider Finance",
+    place: "Zwolle",
+    tag: "Vast",
+    green: false,
+    date: "01-09-2026",
+    intro:
+      "Voor een organisatie in Zwolle zoeken wij een Teamleider Finance. Jij geeft leiding aan het financiële team en zorgt dat de financiële processen strak, betrouwbaar en toekomstbestendig zijn ingericht.",
+    facts: [
+      { icon: "place", label: "Zwolle" },
+      { icon: "hours", label: "Fulltime" },
+      { icon: "salary", label: "Finance · Leidinggeven" },
+    ],
+    sections: [
+      {
+        heading: "Wat ga je doen?",
+        body: [
+          "Als Teamleider Finance geef je leiding aan een team van financieel medewerkers en zorg je voor een betrouwbare administratie, rapportage en planning & control-cyclus.",
+          "Je verbetert processen, coacht je teamleden in hun ontwikkeling en schakelt met het management over cijfers en kansen.",
+        ],
+      },
+      {
+        heading: "Wat breng je mee?",
+        body: [
+          "Een afgeronde HBO-opleiding in een financiële richting.",
+          "Ervaring met het aansturen van een financieel team.",
+          "Een stevige persoonlijkheid die structuur brengt en mensen in beweging krijgt.",
+        ],
+      },
+      {
+        heading: "Wat bieden wij?",
+        body: [
+          "Een uitstekend basissalaris met bonusmogelijkheden en mooie secundaire voorwaarden, waaronder een goed pensioenplan.",
+          "Ruimte voor ontwikkeling via coaching en opleidingen die je zelf kiest.",
+          "Een vast dienstverband via Boulder en de ondersteuning van een jonge, ondernemende club.",
+        ],
+      },
+      {
+        heading: "Over de opdrachtgever",
+        body: [
+          "Een groeiende organisatie in Zwolle waar financiële precisie écht verschil maakt.",
+          "Via Boulder stap je in met zekerheid, goede voorwaarden en een sterk regionaal netwerk.",
+        ],
+      },
+    ],
+  },
 };
 
 export const Route = createFileRoute("/vacature/$slug")({
