@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import logoAsset from "@/assets/logo-boulder.svg.asset.json";
 import teamAsset from "@/assets/boulder-team.jpg.asset.json";
 import engineeringAsset from "@/assets/boulder-engineering.jpg.asset.json";
