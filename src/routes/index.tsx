@@ -32,10 +32,10 @@ export const Route = createFileRoute("/")({
 });
 
 const liveVacatures = [
-  { title: "Projectleider Bouwkunde", meta: "Regio Amersfoort · Engineering", tag: "Tijdelijk", green: true },
-  { title: "Senior Business Controller bij EDSN", meta: "Amersfoort · Finance", tag: "Vast", green: false },
-  { title: "Projectleider Werktuigbouwkunde", meta: "Rotterdam · Engineering", tag: "Tijdelijk", green: true },
-  { title: "Teamleider Finance", meta: "Zwolle · Finance", tag: "Vast", green: false },
+  { title: "Projectleider Bouwkunde", meta: "Regio Amersfoort · Engineering", tag: "Tijdelijk", green: true, slug: "projectleider-bouwkunde" },
+  { title: "Senior Business Controller bij EDSN", meta: "Amersfoort · Finance", tag: "Vast", green: false, slug: "senior-business-controller" },
+  { title: "Projectleider Werktuigbouwkunde", meta: "Rotterdam · Engineering", tag: "Tijdelijk", green: true, slug: "projectleider-werktuigbouwkunde" },
+  { title: "Teamleider Finance", meta: "Zwolle · Finance", tag: "Vast", green: false, slug: "teamleider-finance" },
 ];
 
 const vacatureCards = [
@@ -195,19 +195,25 @@ function Index() {
               </div>
               <ul className="divide-y divide-navy/5">
                 {liveVacatures.map((v) => (
-                  <li key={v.title} className="flex items-center gap-4 px-5 py-4 transition hover:bg-surface">
-                    <span className={`h-10 w-px shrink-0 ${v.green ? "bg-boulder" : "bg-navy2"}`} />
-                    <div className="min-w-0 flex-1">
-                      <p className="truncate font-semibold">{v.title}</p>
-                      <p className="text-sm text-navy/55">{v.meta}</p>
-                    </div>
-                    <span
-                      className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold ${
-                        v.green ? "bg-boulder/15 text-boulder" : "bg-navy/10 text-navy2"
-                      }`}
+                  <li key={v.title}>
+                    <Link
+                      to="/vacature/$slug"
+                      params={{ slug: v.slug }}
+                      className="flex items-center gap-4 px-5 py-4 transition hover:bg-surface"
                     >
-                      {v.tag}
-                    </span>
+                      <span className={`h-10 w-px shrink-0 ${v.green ? "bg-boulder" : "bg-navy2"}`} />
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate font-semibold">{v.title}</p>
+                        <p className="text-sm text-navy/55">{v.meta}</p>
+                      </div>
+                      <span
+                        className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold ${
+                          v.green ? "bg-boulder/15 text-boulder" : "bg-navy/10 text-navy2"
+                        }`}
+                      >
+                        {v.tag}
+                      </span>
+                    </Link>
                   </li>
                 ))}
               </ul>
