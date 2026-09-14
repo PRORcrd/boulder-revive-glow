@@ -53,6 +53,7 @@ const vacatureCards = [
     tag: "Vast",
     green: false,
     date: "04-09",
+    slug: "senior-business-controller",
     title: "Senior Business Controller",
     place: "EDSN · Amersfoort",
     desc: "Ben jij de stevige business partner die energie krijgt van scherpe analyses en strategische impact?",
@@ -62,6 +63,7 @@ const vacatureCards = [
     tag: "Tijdelijk",
     green: true,
     date: "02-09",
+    slug: "werkvoorbereider-installatietechniek",
     title: "Werkvoorbereider Installatietechniek",
     place: "Regio Amsterdam",
     desc: "Jij bent de organisatorische motor achter de meest strak gestroomlijnde en duurzame installatieprojecten.",
@@ -316,7 +318,7 @@ function Index() {
                   </span>
                 ))}
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>
