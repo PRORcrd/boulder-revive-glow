@@ -43,6 +43,7 @@ const vacatureCards = [
     tag: "Tijdelijk",
     green: true,
     date: "09-09",
+    slug: "projectleider-bouwkunde",
     title: "Projectleider Bouwkunde",
     place: "Regio Amersfoort",
     desc: "Jij stuurt het projectteam aan en bewaakt budgetten om bouwkundige betonstations van A tot Z op tijd op te leveren.",
@@ -288,9 +289,11 @@ function Index() {
         </div>
         <div className="grid gap-5 md:grid-cols-3">
           {vacatureCards.map((v) => (
-            <article
+            <Link
               key={v.title}
-              className="rounded-2xl border border-navy/10 bg-white p-6 transition hover:-translate-y-0.5 hover:shadow-md"
+              to="/vacature/$slug"
+              params={{ slug: v.slug }}
+              className="rounded-2xl border border-navy/10 bg-white p-6 transition hover:-translate-y-0.5 hover:border-boulder/50 hover:shadow-md"
             >
               <div className="mb-4 flex items-center justify-between">
                 <span
