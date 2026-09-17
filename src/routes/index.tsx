@@ -3,11 +3,40 @@ import logoAsset from "@/assets/logo-boulder.svg.asset.json";
 import teamAsset from "@/assets/boulder-team.jpg.asset.json";
 import engineeringAsset from "@/assets/boulder-engineering.jpg.asset.json";
 import financeAsset from "@/assets/boulder-finance.jpg.asset.json";
+import collaborationAsset from "@/assets/boulder-collaboration.jpg.asset.json";
+import ulcAsset from "@/assets/client-ulc.png.asset.json";
+import vbhAsset from "@/assets/client-vbh.png.asset.json";
+import prorailAsset from "@/assets/client-prorail.png.asset.json";
+import verderAsset from "@/assets/client-verder.jpg.asset.json";
+import arcadisAsset from "@/assets/client-arcadis.png.asset.json";
+import lelyAsset from "@/assets/client-lely.png.asset.json";
+import enecoAsset from "@/assets/client-eneco.png.asset.json";
+import heijmansAsset from "@/assets/client-heijmans.png.asset.json";
+import issAsset from "@/assets/client-iss.png.asset.json";
+import kantersAsset from "@/assets/client-kanters.png.asset.json";
+import capgeminiAsset from "@/assets/client-capgemini.png.asset.json";
+import fmeAsset from "@/assets/client-fme.png.asset.json";
 
 const logo = logoAsset.url;
 const teamPhoto = teamAsset.url;
 const engineeringPhoto = engineeringAsset.url;
 const financePhoto = financeAsset.url;
+const collaborationPhoto = collaborationAsset.url;
+
+const clients = [
+  { name: "ULC", logo: ulcAsset.url },
+  { name: "VBH", logo: vbhAsset.url },
+  { name: "ProRail", logo: prorailAsset.url },
+  { name: "Verder", logo: verderAsset.url },
+  { name: "Arcadis", logo: arcadisAsset.url },
+  { name: "Lely", logo: lelyAsset.url },
+  { name: "Eneco eMobility", logo: enecoAsset.url },
+  { name: "Heijmans", logo: heijmansAsset.url },
+  { name: "ISS Facility Services", logo: issAsset.url },
+  { name: "Kanters", logo: kantersAsset.url },
+  { name: "Capgemini", logo: capgeminiAsset.url },
+  { name: "FME", logo: fmeAsset.url },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -116,7 +145,7 @@ const redenen = [
 
 function Index() {
   return (
-    <div className="min-h-screen bg-surface font-body text-navy antialiased selection:bg-boulder/30">
+    <div className="min-h-screen overflow-x-hidden bg-surface font-body text-navy antialiased selection:bg-boulder/30">
       <header className="sticky top-0 z-20 border-b border-navy/10 bg-surface/95 backdrop-blur-sm">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <a href="https://boulder.nl/" aria-label="Boulder homepage">
@@ -143,7 +172,7 @@ function Index() {
             <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-boulder">
               Detachering · Amersfoort
             </p>
-            <h1 className="mb-6 font-display text-5xl leading-[0.95] tracking-tight">
+            <h1 className="mb-6 font-display text-4xl leading-[0.95] tracking-tight sm:text-5xl">
               No-nonsense
               <br />
               Detacheringsbureau
@@ -232,6 +261,32 @@ function Index() {
             height={1059}
             className="mt-12 aspect-[2/1] w-full rounded-2xl object-cover object-center"
           />
+        </div>
+      </section>
+
+      <section aria-labelledby="clients-heading" className="overflow-hidden border-y border-navy/10 bg-white py-9">
+        <div className="mx-auto mb-6 max-w-6xl px-6">
+          <p id="clients-heading" className="text-center text-xs font-semibold uppercase tracking-widest text-navy/45">
+            Organisaties waar onze professionals werken
+          </p>
+        </div>
+        <div className="client-marquee overflow-hidden" aria-label="Opdrachtgevers van Boulder">
+          <div className="client-marquee-track flex w-max items-center">
+            {[0, 1].map((set) => (
+              <div key={set} className="flex shrink-0 items-center" aria-hidden={set === 1}>
+                {clients.map((client) => (
+                  <div key={`${set}-${client.name}`} className="mx-4 flex h-20 w-40 shrink-0 items-center justify-center px-5 sm:mx-7 sm:w-44">
+                    <img
+                      src={client.logo}
+                      alt={set === 0 ? client.name : ""}
+                      loading="lazy"
+                      className="max-h-14 max-w-full object-contain opacity-65 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+                    />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -331,12 +386,24 @@ function Index() {
 
       <section id="waarom" className="border-y border-navy/10 bg-white">
         <div className="mx-auto max-w-6xl px-6 py-16">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-boulder">
-            Daarom werken bij Boulder
-          </p>
-          <h2 className="mb-10 max-w-lg font-display text-3xl tracking-tight">
-            Een jonge, mensgerichte en ondernemende club.
-          </h2>
+          <div className="mb-10 grid items-end gap-8 lg:grid-cols-[1fr_1.15fr]">
+            <div>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-boulder">
+                Daarom werken bij Boulder
+              </p>
+              <h2 className="max-w-lg font-display text-3xl tracking-tight">
+                Een jonge, mensgerichte en ondernemende club.
+              </h2>
+            </div>
+            <img
+              src={collaborationPhoto}
+              alt="Boulder-professional aan het werk"
+              width={2000}
+              height={890}
+              loading="lazy"
+              className="aspect-[16/7] w-full rounded-2xl object-cover"
+            />
+          </div>
           <div className="grid gap-px overflow-hidden rounded-2xl bg-navy/10 sm:grid-cols-2 lg:grid-cols-4">
             {redenen.map((r) => (
               <div key={r.n} className="bg-surface p-6">
