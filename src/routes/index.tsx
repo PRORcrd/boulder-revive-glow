@@ -172,7 +172,7 @@ function Index() {
             <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-boulder">
               Detachering · Amersfoort
             </p>
-            <h1 className="mb-6 font-display text-5xl leading-[0.95] tracking-tight">
+            <h1 className="mb-6 font-display text-4xl leading-[0.95] tracking-tight sm:text-5xl">
               No-nonsense
               <br />
               Detacheringsbureau
