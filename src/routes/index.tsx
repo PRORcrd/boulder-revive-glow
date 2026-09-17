@@ -264,7 +264,7 @@ function Index() {
         </div>
       </section>
 
-      <section aria-labelledby="clients-heading" className="border-y border-navy/10 bg-white py-9">
+      <section aria-labelledby="clients-heading" className="overflow-hidden border-y border-navy/10 bg-white py-9">
         <div className="mx-auto mb-6 max-w-6xl px-6">
           <p id="clients-heading" className="text-center text-xs font-semibold uppercase tracking-widest text-navy/45">
             Organisaties waar onze professionals werken
