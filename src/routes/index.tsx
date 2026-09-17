@@ -145,7 +145,7 @@ const redenen = [
 
 function Index() {
   return (
-    <div className="min-h-screen bg-surface font-body text-navy antialiased selection:bg-boulder/30">
+    <div className="min-h-screen overflow-x-hidden bg-surface font-body text-navy antialiased selection:bg-boulder/30">
       <header className="sticky top-0 z-20 border-b border-navy/10 bg-surface/95 backdrop-blur-sm">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <a href="https://boulder.nl/" aria-label="Boulder homepage">
