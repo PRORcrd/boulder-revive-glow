@@ -180,7 +180,7 @@ function Index() {
             <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-boulder">
               Detachering · Amersfoort
             </p>
-            <h1 className="max-w-2xl font-display text-3xl leading-[0.95] tracking-tight text-surface sm:text-5xl">
+            <h1 className="max-w-2xl font-display text-[1.65rem] leading-[1] tracking-tight text-surface sm:text-5xl sm:leading-[0.95]">
               No-nonsense
               <br />
               Detacheringsbureau
