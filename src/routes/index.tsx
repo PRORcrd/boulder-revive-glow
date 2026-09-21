@@ -178,48 +178,52 @@ function Index() {
               <br />
               <span className="text-boulder">Finance &amp; Techniek.</span>
             </h1>
-            <p className="mb-8 max-w-sm text-lg leading-relaxed text-navy/70">
-              Boulder bemiddelt technici en financials in Amersfoort, regio Utrecht en de Randstad.
-              Ondernemend, mensgericht en zonder omhaal.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href="https://boulder.nl/vacatures/"
-                className="rounded-full bg-navy px-6 py-3.5 font-semibold text-surface transition hover:bg-navy2"
-              >
-                Bekijk vacatures
-              </a>
-              <a
-                href="https://boulder.nl/werken-bij-boulder/"
-                className="rounded-full border border-navy/20 px-6 py-3.5 font-semibold transition hover:border-navy/40"
-              >
-                Werken bij Boulder
-              </a>
-            </div>
-            <div className="mt-10 flex gap-8 border-t border-navy/10 pt-8">
-              <div>
-                <p className="font-display text-3xl">2</p>
-                <p className="text-sm text-navy/60">specialismen</p>
-              </div>
-              <div>
-                <p className="font-display text-3xl">5,0</p>
-                <p className="text-sm text-navy/60">Google-score</p>
-              </div>
-              <div>
-                <p className="font-display text-3xl">15</p>
-                <p className="text-sm text-navy/60">recensies</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="lg:col-span-7">
             <img
               src={teamPhoto}
               alt="Het team van Boulder Detachering"
               width={2000}
               height={1059}
-              className="mb-6 aspect-[2/1] w-full rounded-2xl object-cover object-center"
+              className="aspect-[2/1] w-full rounded-2xl object-cover object-center lg:col-span-7"
             />
+          </div>
+
+          <div className="mt-8 grid items-start gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <p className="mb-8 max-w-sm text-lg leading-relaxed text-navy/70">
+                Boulder bemiddelt technici en financials in Amersfoort, regio Utrecht en de Randstad.
+                Ondernemend, mensgericht en zonder omhaal.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://boulder.nl/vacatures/"
+                  className="rounded-full bg-navy px-6 py-3.5 font-semibold text-surface transition hover:bg-navy2"
+                >
+                  Bekijk vacatures
+                </a>
+                <a
+                  href="https://boulder.nl/werken-bij-boulder/"
+                  className="rounded-full border border-navy/20 px-6 py-3.5 font-semibold transition hover:border-navy/40"
+                >
+                  Werken bij Boulder
+                </a>
+              </div>
+              <div className="mt-10 flex gap-8 border-t border-navy/10 pt-8">
+                <div>
+                  <p className="font-display text-3xl">2</p>
+                  <p className="text-sm text-navy/60">specialismen</p>
+                </div>
+                <div>
+                  <p className="font-display text-3xl">5,0</p>
+                  <p className="text-sm text-navy/60">Google-score</p>
+                </div>
+                <div>
+                  <p className="font-display text-3xl">15</p>
+                  <p className="text-sm text-navy/60">recensies</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-7">
             <div className="overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-sm">
               <div className="flex items-center justify-between border-b border-navy/10 px-5 py-4">
                 <div className="flex items-center gap-2">
