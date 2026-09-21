@@ -261,6 +261,8 @@ function Index() {
               </a>
             </div>
           </div>
+        </div>
+      </section>
 
       <section aria-labelledby="clients-heading" className="overflow-hidden border-y border-navy/10 bg-white py-9">
         <div className="mx-auto mb-6 max-w-6xl px-6">
