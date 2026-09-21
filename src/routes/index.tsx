@@ -214,6 +214,13 @@ function Index() {
           </div>
 
           <div className="lg:col-span-7">
+            <img
+              src={teamPhoto}
+              alt="Het team van Boulder Detachering"
+              width={2000}
+              height={1059}
+              className="mb-6 aspect-[2/1] w-full rounded-2xl object-cover object-center"
+            />
             <div className="overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-sm">
               <div className="flex items-center justify-between border-b border-navy/10 px-5 py-4">
                 <div className="flex items-center gap-2">
@@ -254,15 +261,6 @@ function Index() {
               </a>
             </div>
           </div>
-          <img
-            src={teamPhoto}
-            alt="Het team van Boulder Detachering"
-            width={2000}
-            height={1059}
-            className="mt-12 aspect-[2/1] w-full rounded-2xl object-cover object-center"
-          />
-        </div>
-      </section>
 
       <section aria-labelledby="clients-heading" className="overflow-hidden border-y border-navy/10 bg-white py-9">
         <div className="mx-auto mb-6 max-w-6xl px-6">
