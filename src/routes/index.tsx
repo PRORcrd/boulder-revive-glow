@@ -172,7 +172,7 @@ function Index() {
             <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-boulder">
               Detachering · Amersfoort
             </p>
-            <h1 className="mb-6 font-display text-4xl leading-[0.95] tracking-tight sm:text-5xl">
+            <h1 className="mb-6 font-display text-3xl leading-[0.95] tracking-tight sm:text-4xl">
               No-nonsense
               <br />
               Detacheringsbureau
@@ -214,6 +214,13 @@ function Index() {
           </div>
 
           <div className="lg:col-span-7">
+            <img
+              src={teamPhoto}
+              alt="Het team van Boulder Detachering"
+              width={2000}
+              height={1059}
+              className="mb-6 aspect-[2/1] w-full rounded-2xl object-cover object-center"
+            />
             <div className="overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-sm">
               <div className="flex items-center justify-between border-b border-navy/10 px-5 py-4">
                 <div className="flex items-center gap-2">
@@ -254,13 +261,6 @@ function Index() {
               </a>
             </div>
           </div>
-          <img
-            src={teamPhoto}
-            alt="Het team van Boulder Detachering"
-            width={2000}
-            height={1059}
-            className="mt-12 aspect-[2/1] w-full rounded-2xl object-cover object-center"
-          />
         </div>
       </section>
 
@@ -279,8 +279,7 @@ function Index() {
                     <img
                       src={client.logo}
                       alt={set === 0 ? client.name : ""}
-                      loading="lazy"
-                      className="max-h-14 max-w-full object-contain opacity-65 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+                      className="max-h-14 max-w-full object-contain"
                     />
                   </div>
                 ))}
