@@ -167,12 +167,11 @@ function Index() {
       </header>
 
       <section className="mx-auto max-w-6xl px-6 pt-14 pb-16">
-        <div className="grid items-start gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-5">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-boulder">
-              Detachering · Amersfoort
-            </p>
-            <h1 className="mb-6 font-display text-3xl leading-[0.95] tracking-tight sm:text-4xl">
+        <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-boulder">
+          Detachering · Amersfoort
+        </p>
+        <div className="grid items-center gap-6 lg:grid-cols-12 lg:gap-10">
+          <h1 className="font-display text-3xl leading-[0.95] tracking-tight sm:text-4xl lg:col-span-5">
               No-nonsense
               <br />
               Detacheringsbureau
