@@ -167,25 +167,28 @@ function Index() {
       </header>
 
       <section className="mx-auto max-w-6xl px-6 pt-14 pb-16">
-        <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-boulder">
-          Detachering · Amersfoort
-        </p>
-        <div className="grid items-center gap-6 lg:grid-cols-12 lg:gap-10">
-          <h1 className="font-display text-3xl leading-[0.95] tracking-tight sm:text-4xl lg:col-span-5">
+        <div className="relative overflow-hidden rounded-2xl">
+          <img
+            src={teamPhoto}
+            alt="Het team van Boulder Detachering"
+            width={2000}
+            height={1059}
+            className="h-[420px] w-full object-cover object-center sm:h-[480px] lg:h-[540px]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy/85 via-navy/45 to-navy/10" />
+          <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-boulder">
+              Detachering · Amersfoort
+            </p>
+            <h1 className="max-w-2xl font-display text-[1.65rem] leading-[1] tracking-tight text-surface sm:text-5xl sm:leading-[0.95]">
               No-nonsense
               <br />
               Detacheringsbureau
               <br />
               <span className="text-boulder">Finance &amp; Techniek.</span>
             </h1>
-            <img
-              src={teamPhoto}
-              alt="Het team van Boulder Detachering"
-              width={2000}
-              height={1059}
-              className="aspect-[2/1] w-full rounded-2xl object-cover object-center lg:col-span-7"
-            />
           </div>
+        </div>
 
           <div className="mt-8 grid items-start gap-10 lg:grid-cols-12">
             <div className="lg:col-span-5">
