@@ -172,7 +172,7 @@ function Index() {
             <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-boulder">
               Detachering · Amersfoort
             </p>
-            <h1 className="mb-6 font-display text-4xl leading-[0.95] tracking-tight sm:text-5xl">
+            <h1 className="mb-6 font-display text-3xl leading-[0.95] tracking-tight sm:text-4xl">
               No-nonsense
               <br />
               Detacheringsbureau
@@ -279,8 +279,7 @@ function Index() {
                     <img
                       src={client.logo}
                       alt={set === 0 ? client.name : ""}
-                      loading="lazy"
-                      className="max-h-14 max-w-full object-contain opacity-65 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+                      className="max-h-14 max-w-full object-contain"
                     />
                   </div>
                 ))}
