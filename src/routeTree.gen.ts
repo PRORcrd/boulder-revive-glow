@@ -10,11 +10,23 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BrancheEngineeringRouteImport } from './routes/branche/engineering'
+import { Route as BrancheFinanceRouteImport } from './routes/branche/finance'
 import { Route as VacatureSlugRouteImport } from './routes/vacature/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrancheEngineeringRoute = BrancheEngineeringRouteImport.update({
+  id: '/branche/engineering',
+  path: '/branche/engineering',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrancheFinanceRoute = BrancheFinanceRouteImport.update({
+  id: '/branche/finance',
+  path: '/branche/finance',
   getParentRoute: () => rootRouteImport,
 } as any)
 const VacatureSlugRoute = VacatureSlugRouteImport.update({
@@ -25,27 +37,41 @@ const VacatureSlugRoute = VacatureSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/branche/engineering': typeof BrancheEngineeringRoute
+  '/branche/finance': typeof BrancheFinanceRoute
   '/vacature/$slug': typeof VacatureSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/branche/engineering': typeof BrancheEngineeringRoute
+  '/branche/finance': typeof BrancheFinanceRoute
   '/vacature/$slug': typeof VacatureSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/branche/engineering': typeof BrancheEngineeringRoute
+  '/branche/finance': typeof BrancheFinanceRoute
   '/vacature/$slug': typeof VacatureSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/vacature/$slug'
+  fullPaths:
+    '/' | '/branche/engineering' | '/branche/finance' | '/vacature/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/vacature/$slug'
-  id: '__root__' | '/' | '/vacature/$slug'
+  to: '/' | '/branche/engineering' | '/branche/finance' | '/vacature/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/branche/engineering'
+    | '/branche/finance'
+    | '/vacature/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BrancheEngineeringRoute: typeof BrancheEngineeringRoute
+  BrancheFinanceRoute: typeof BrancheFinanceRoute
   VacatureSlugRoute: typeof VacatureSlugRoute
 }
 
@@ -56,6 +82,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/branche/engineering': {
+      id: '/branche/engineering'
+      path: '/branche/engineering'
+      fullPath: '/branche/engineering'
+      preLoaderRoute: typeof BrancheEngineeringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/branche/finance': {
+      id: '/branche/finance'
+      path: '/branche/finance'
+      fullPath: '/branche/finance'
+      preLoaderRoute: typeof BrancheFinanceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/vacature/$slug': {
@@ -70,6 +110,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BrancheEngineeringRoute: BrancheEngineeringRoute,
+  BrancheFinanceRoute: BrancheFinanceRoute,
   VacatureSlugRoute: VacatureSlugRoute,
 }
 export const routeTree = rootRouteImport
