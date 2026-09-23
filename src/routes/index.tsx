@@ -153,8 +153,8 @@ function Index() {
           </a>
           <nav className="hidden items-center gap-8 text-sm font-medium text-navy/70 md:flex">
             <a className="hover:text-navy" href="https://boulder.nl/vacatures/">Vacatures</a>
-            <a className="hover:text-navy" href="https://boulder.nl/branche/engineering/">Engineering</a>
-            <a className="hover:text-navy" href="https://boulder.nl/branche/finance/">Finance</a>
+            <Link className="hover:text-navy" to="/branche/engineering">Engineering</Link>
+            <Link className="hover:text-navy" to="/branche/finance">Finance</Link>
             <a className="hover:text-navy" href="https://boulder.nl/over-boulder/">Over ons</a>
           </nav>
           <a
@@ -318,9 +318,9 @@ function Index() {
                 <span className="rounded-full bg-surface/10 px-3 py-1.5 text-xs">Elektrotechniek</span>
                 <span className="rounded-full bg-surface/10 px-3 py-1.5 text-xs">Bouwkunde</span>
               </div>
-               <a href="https://boulder.nl/branche/engineering/" className="text-sm font-semibold text-boulder">
+               <Link to="/branche/engineering" className="text-sm font-semibold text-boulder">
                 Ontdek Engineering →
-              </a>
+               </Link>
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-surface/10 bg-navy2 transition hover:border-boulder/60">
@@ -339,9 +339,9 @@ function Index() {
                 <span className="rounded-full bg-surface/10 px-3 py-1.5 text-xs">Accountancy</span>
                 <span className="rounded-full bg-surface/10 px-3 py-1.5 text-xs">Interim finance</span>
               </div>
-               <a href="https://boulder.nl/branche/finance/" className="text-sm font-semibold text-boulder">
+               <Link to="/branche/finance" className="text-sm font-semibold text-boulder">
                 Ontdek Finance →
-              </a>
+               </Link>
               </div>
             </div>
           </div>
@@ -512,8 +512,8 @@ function Index() {
               <h4 className="mb-4 text-sm font-semibold">Bureau</h4>
               <ul className="space-y-2.5 text-sm text-surface/60">
                 <li><a href="https://boulder.nl/vacatures/" className="hover:text-boulder">Vacatures</a></li>
-                <li><a href="https://boulder.nl/branche/engineering/" className="hover:text-boulder">Engineering</a></li>
-                <li><a href="https://boulder.nl/branche/finance/" className="hover:text-boulder">Finance</a></li>
+                <li><Link to="/branche/engineering" className="hover:text-boulder">Engineering</Link></li>
+                <li><Link to="/branche/finance" className="hover:text-boulder">Finance</Link></li>
                 <li><a href="https://boulder.nl/over-boulder/" className="hover:text-boulder">Over ons</a></li>
               </ul>
             </div>
