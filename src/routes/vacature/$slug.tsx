@@ -294,6 +294,12 @@ function VacaturePage() {
           <Link to="/" aria-label="Boulder homepage">
             <img src={logo} alt="Boulder Detachering" className="h-9 w-auto" />
           </Link>
+          <nav className="hidden items-center gap-8 text-sm font-medium text-navy/70 md:flex">
+            <Link to="/" className="hover:text-navy">Home</Link>
+            <Link to="/branche/engineering" className="hover:text-navy">Engineering</Link>
+            <Link to="/branche/finance" className="hover:text-navy">Finance</Link>
+            <Link to="/over-boulder" className="hover:text-navy">Over ons</Link>
+          </nav>
           <a
             href="https://boulder.nl/contact/"
             className="rounded-full bg-boulder px-5 py-2.5 text-sm font-semibold text-navy transition hover:bg-boulder/90"

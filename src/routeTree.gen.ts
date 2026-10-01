@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as OverBoulderRouteImport } from './routes/over-boulder'
 import { Route as BrancheEngineeringRouteImport } from './routes/branche/engineering'
 import { Route as BrancheFinanceRouteImport } from './routes/branche/finance'
 import { Route as VacatureSlugRouteImport } from './routes/vacature/$slug'
@@ -17,6 +18,11 @@ import { Route as VacatureSlugRouteImport } from './routes/vacature/$slug'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OverBoulderRoute = OverBoulderRouteImport.update({
+  id: '/over-boulder',
+  path: '/over-boulder',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BrancheEngineeringRoute = BrancheEngineeringRouteImport.update({
@@ -37,12 +43,14 @@ const VacatureSlugRoute = VacatureSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/over-boulder': typeof OverBoulderRoute
   '/branche/engineering': typeof BrancheEngineeringRoute
   '/branche/finance': typeof BrancheFinanceRoute
   '/vacature/$slug': typeof VacatureSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/over-boulder': typeof OverBoulderRoute
   '/branche/engineering': typeof BrancheEngineeringRoute
   '/branche/finance': typeof BrancheFinanceRoute
   '/vacature/$slug': typeof VacatureSlugRoute
@@ -50,6 +58,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/over-boulder': typeof OverBoulderRoute
   '/branche/engineering': typeof BrancheEngineeringRoute
   '/branche/finance': typeof BrancheFinanceRoute
   '/vacature/$slug': typeof VacatureSlugRoute
@@ -57,12 +66,22 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/branche/engineering' | '/branche/finance' | '/vacature/$slug'
+    | '/'
+    | '/over-boulder'
+    | '/branche/engineering'
+    | '/branche/finance'
+    | '/vacature/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/branche/engineering' | '/branche/finance' | '/vacature/$slug'
+  to:
+    | '/'
+    | '/over-boulder'
+    | '/branche/engineering'
+    | '/branche/finance'
+    | '/vacature/$slug'
   id:
     | '__root__'
     | '/'
+    | '/over-boulder'
     | '/branche/engineering'
     | '/branche/finance'
     | '/vacature/$slug'
@@ -70,6 +89,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  OverBoulderRoute: typeof OverBoulderRoute
   BrancheEngineeringRoute: typeof BrancheEngineeringRoute
   BrancheFinanceRoute: typeof BrancheFinanceRoute
   VacatureSlugRoute: typeof VacatureSlugRoute
@@ -82,6 +102,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/over-boulder': {
+      id: '/over-boulder'
+      path: '/over-boulder'
+      fullPath: '/over-boulder'
+      preLoaderRoute: typeof OverBoulderRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/branche/engineering': {
@@ -110,6 +137,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  OverBoulderRoute: OverBoulderRoute,
   BrancheEngineeringRoute: BrancheEngineeringRoute,
   BrancheFinanceRoute: BrancheFinanceRoute,
   VacatureSlugRoute: VacatureSlugRoute,
