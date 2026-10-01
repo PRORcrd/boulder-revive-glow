@@ -58,6 +58,7 @@ export function BranchPage({
             <Link to="/" className="transition hover:text-navy">Home</Link>
             <Link to="/branche/engineering" className="transition hover:text-navy">Engineering</Link>
             <Link to="/branche/finance" className="transition hover:text-navy">Finance</Link>
+            <Link to="/over-boulder" className="transition hover:text-navy">Over ons</Link>
             <a href="#vacatures" className="transition hover:text-navy">Vacatures</a>
           </nav>
           <Button asChild className="h-auto rounded-full bg-boulder px-5 py-2.5 font-semibold text-navy shadow-none hover:bg-boulder/90">

@@ -155,7 +155,7 @@ function Index() {
             <a className="hover:text-navy" href="https://boulder.nl/vacatures/">Vacatures</a>
             <Link className="hover:text-navy" to="/branche/engineering">Engineering</Link>
             <Link className="hover:text-navy" to="/branche/finance">Finance</Link>
-            <a className="hover:text-navy" href="https://boulder.nl/over-boulder/">Over ons</a>
+            <Link className="hover:text-navy" to="/over-boulder">Over ons</Link>
           </nav>
           <a
             href="https://boulder.nl/contact/"
@@ -479,9 +479,9 @@ function Index() {
                 Utrecht en de Randstad. We adviseren en bemiddelen technici en financials, en bouwen aan een
                 sterk netwerk waarin kennis actief wordt gedeeld.
               </p>
-              <a href="https://boulder.nl/over-boulder/" className="mt-2 inline-block font-semibold text-boulder">
+              <Link to="/over-boulder" className="mt-2 inline-block font-semibold text-boulder">
                 Lees ons verhaal →
-              </a>
+              </Link>
             </div>
             <div className="lg:col-span-5">
               <img
@@ -514,7 +514,7 @@ function Index() {
                 <li><a href="https://boulder.nl/vacatures/" className="hover:text-boulder">Vacatures</a></li>
                 <li><Link to="/branche/engineering" className="hover:text-boulder">Engineering</Link></li>
                 <li><Link to="/branche/finance" className="hover:text-boulder">Finance</Link></li>
-                <li><a href="https://boulder.nl/over-boulder/" className="hover:text-boulder">Over ons</a></li>
+                <li><Link to="/over-boulder" className="hover:text-boulder">Over ons</Link></li>
               </ul>
             </div>
             <div>
